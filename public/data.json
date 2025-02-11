@@ -1,0 +1,68 @@
+{
+  "listOfProjects": [
+    {
+      "id": "1",
+      "name": "project1",
+      "desc": "this is the 1 project",
+      "date": "11-02-2025",
+      "status":"Active",
+      "listOfDevelopers": [
+        {
+          "devId": "",
+          "devName": "",
+          "dataOfJoin": "11-02-2025",
+          "listOfTasks": [
+            {
+              "taskId": "",
+              "devRefId": "",
+              "taskName": "",
+              "status": "pending",
+              "priority": "low",
+              "dateOfSubmission": "11-02-2025"
+            },
+            {
+              "taskId": "",
+              "devRefId": "",
+              "taskName": "",
+              "status": "QA",
+              "priority": "high",
+              "dateOfSubmission": "11-02-2025"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "project2",
+      "desc": "this is the 2nd project",
+      "date": "11-02-2025",
+      "status":"Done",
+      "listOfDevelopers": [
+        {
+          "devId": "",
+          "devName": "",
+          "dataOfJoin": "11-02-2025",
+          "listOfTasks": [
+            {
+              "taskId": "",
+              "devRefId": "",
+              "taskName": "",
+              "status": "pending",
+              "priority": "low",
+              "dateOfSubmission": "11-02-2025"
+            },
+            {
+              "taskId": "",
+              "devRefId": "",
+              "taskName": "",
+              "status": "QA",
+              "priority": "low",
+              "dateOfSubmission": "11-02-2025"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
