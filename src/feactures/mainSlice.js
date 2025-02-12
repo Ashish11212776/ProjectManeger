@@ -13,7 +13,9 @@ export const mainSlice = createSlice({
   initialState,
   reducers: {
     ADD_DATA: (state, action) => {
-      state.data.push(action.payload);
+        console.log("Current state.data:", state.data);
+        console.log("Type of state.data:", typeof state.data);
+      state.data=[...state.data,action.payload]
     }
   },
   extraReducers: (builder) => {

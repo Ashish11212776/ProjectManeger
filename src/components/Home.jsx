@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import useMainData from "../hooks/useMainData";
 import "./home.css";
 
@@ -10,16 +11,21 @@ const Home = () => {
     return <p>No data available</p>;
 
   return (
-    <div className="project-container">
-      {data.listOfProjects.map((project) => (
-        <div key={project.id} className="project-card">
-          <h2>{project.name}</h2>
-          <p><strong>Description:</strong> {project.desc}</p>
-          <p><strong>Date:</strong> {project.date}</p>
-           <p><strong>status: </strong>{project.status}</p>
-        </div>
-      ))}
-    </div>
+   
+   <div className="project-container">
+  {data.listOfProjects.map((project) => (
+    <Link to={`/${project.id}`} key={project.id}>
+      <div className="project-card">
+        <h2>{project.name}</h2>
+        <p><strong>Description:</strong> {project.desc}</p>
+        <p><strong>Date:</strong> {project.projStartDate}</p>
+        <p><strong>Status: </strong>{project.status}</p>
+      </div>
+    </Link>
+  ))}
+</div>
+
+   
   );
 };
 
