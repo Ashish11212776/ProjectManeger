@@ -1,0 +1,111 @@
+/* General Container Styling */
+.project-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .project-header{
+    justify-content: space-between;
+   
+  }
+
+  .project-title {
+    font-size: 2.2rem;
+    color: #007bff;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+ 
+  .project-details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .project-desc, .project-date, .project-status {
+    font-size: 1rem;
+    padding: 10px;
+    background: #f9f9f9;
+    border-left: 5px solid #007bff;
+    border-radius: 8px;
+    width: 80%;
+    text-align: left;
+  }
+  
+  /* Status Styling */
+  .status-done {
+    color: #28a745;
+    font-weight: bold;
+  }
+  
+  /* Developer Section */
+  .developers-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+  }
+  
+  .developers-title {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .developers-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .developer-card {
+    background: #f0f0f0;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    width: 220px;
+    transition: transform 0.3s ease;
+  }
+  
+  .developer-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.18);
+  }
+  
+  .developer-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  .developer-join {
+    font-size: 1rem;
+    color: #666;
+  }
+  .Add-btn{
+        background-color: #ff7f50; 
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        size: 50px;
+  }
