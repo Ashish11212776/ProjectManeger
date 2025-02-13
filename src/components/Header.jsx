@@ -1,7 +1,8 @@
-import './header.css'
+import './css/header.css'
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+  
   return (
     <header className="header">
       <h1 className="heading">ProjectManager</h1>

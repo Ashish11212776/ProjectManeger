@@ -2,10 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 import { fetchData } from "./mainThunks";
 
 const initialState = {
-  isLoading: false,  
+  isLoading: false,
   status: "pending",
-  data: [],
-  error: null 
+  data:[] , 
+  error: null,
 };
 
 export const mainSlice = createSlice({
@@ -13,31 +13,50 @@ export const mainSlice = createSlice({
   initialState,
   reducers: {
     ADD_DATA: (state, action) => {
-        console.log("Current state.data:", state.data);
-        console.log("Type of state.data:", typeof state.data);
-      state.data=[...state.data,action.payload]
+      state.data.listOfProjects.push(action.payload);
+    },
+     ADD_DEVELOPER: (state, action) => {
+      const { proj_Id, developer } = action.payload;
+      console.log(proj_Id,developer)
+      const project = state.data.listOfProjects.find(p => p.id === proj_Id.id);
+       console.log("after project",project)
+      if (project) {
+        project.listOfDevelopers.push(developer);
+      }
+    }, ADD_TASK: (state, action) => {
+      const { id,devId,task } = action.payload;
+      console.log(id,devId)
+      const project = state.data.listOfProjects.find(p => p.id ===id);
+      
+      if (project) {
+        const developer = project.listOfDevelopers.find(d => d.devId === devId);
+        if (developer) {
+          developer.listOfTasks.push(task);
+         
+        }
+      }
     }
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchData.pending, (state) => {
-        state.isLoading = true;  
+        state.isLoading = true;
         state.status = "pending";
         state.data = [];
         state.error = null;
       })
       .addCase(fetchData.fulfilled, (state, action) => {
-        state.isLoading = false;  
-        state.status = "success"; 
+        state.isLoading = false;
+        state.status = "success";
         state.data = action.payload;
       })
       .addCase(fetchData.rejected, (state, action) => {
         state.isLoading = false;
         state.status = "failed";
-        state.error = action.error.message; 
+        state.error = action.error.message;
       });
-  }
+  },
 });
 
-export const { ADD_DATA } = mainSlice.actions;
+export const { ADD_DATA,ADD_DEVELOPER,ADD_TASK } = mainSlice.actions;
 export default mainSlice.reducer;

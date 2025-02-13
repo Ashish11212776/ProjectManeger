@@ -4,29 +4,29 @@
       "id": "1",
       "name": "project1",
       "desc": "this is the 1 project",
-      "projStartDate": "11-02-2025",
+      "projStartDate": "2025-02-22",
       "status":"Active",
       "listOfDevelopers": [
         {
           "devId": "dev1",
           "devName": "ramesh",
-          "dataOfJoin": "11-02-2025",
+          "dataOfJoin": "2025-02-22",
           "listOfTasks": [
             {
               "taskId": "task1",
-              "devRefId": "dev1",
               "taskName": "bug fix",
               "status": "pending",
               "priority": "low",
-              "dateOfSubmission": "11-02-2025"
+               "assignDate":"2025-02-22",
+              "dateOfSubmission": "2025-02-22"
             },
             {
               "taskId": "task2",
-              "devRefId": "dev1",
               "taskName": "add loading feacture",
               "status": "QA",
               "priority": "high",
-              "dateOfSubmission": "11-02-2025"
+               "assignDate":"2025-02-22",
+              "dateOfSubmission": "2025-02-22"
             }
           ]
         }
@@ -36,29 +36,29 @@
       "id": "2",
       "name": "project2",
       "desc": "this is the 2nd project",
-      "projStartDate": "12-02-2025",
+      "projStartDate": "2025-02-22",
       "status":"Done",
       "listOfDevelopers": [
         {
           "devId": "dev2",
           "devName": "ashish",
-          "dataOfJoin": "11-02-2025",
+          "dataOfJoin": "2025-02-22",
           "listOfTasks": [
             {
               "taskId": "task1",
-              "devRefId": "dev2",
               "taskName": "login error handle",
               "status": "pending",
               "priority": "low",
-              "dateOfSubmission": "11-02-2025"
+              "assignDate":"2025-02-22",
+              "dateOfSubmission": "2025-02-22"
             },
             {
               "taskId": "task2",
-              "devRefId": "dev2",
               "taskName": "status bar add",
               "status": "QA",
               "priority": "low",
-              "dateOfSubmission": "11-02-2025"
+               "assignDate":"2025-02-22",
+              "dateOfSubmission": "2025-02-22"
             }
           ]
         }

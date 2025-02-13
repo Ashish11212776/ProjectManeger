@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import useMainData from "../hooks/useMainData";
-import "./home.css";
+import "./css/home.css";
 
 const Home = () => {
   const { isLoading, data, error } = useMainData();
+
+  console.log(data)
 
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
