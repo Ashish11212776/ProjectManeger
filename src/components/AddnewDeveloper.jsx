@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { ADD_DEVELOPER } from "../feactures/mainSlice";
 import { useDispatch } from "react-redux";
-const AddNewDeveloper = () => {
+const AddNewDeveloper = ({setisOpen}) => {
  const dispatch=useDispatch();
 
    const id=useParams()
@@ -24,6 +24,7 @@ const AddNewDeveloper = () => {
    dispatch(ADD_DEVELOPER({ proj_Id:id, developer: developer }));
 
     setDeveloper({ devId: "", devName: "", dateOfJoin: "", listOfTasks: [] });
+    setisOpen();
   };
 
   return (

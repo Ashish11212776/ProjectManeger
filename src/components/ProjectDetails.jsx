@@ -1,10 +1,12 @@
 import { Link, useParams } from "react-router-dom";
 import useMainData from "../hooks/useMainData.js";
 import "./css/projectDetails.css";
-
+import { useState } from "react";
+import AddNewDeveloper from "./AddnewDeveloper.jsx";
 const ProjectDetails = () => {
   const { isLoading, data, error } = useMainData();
   const { id } = useParams();
+  const [isOpen, setisOpen]=useState(false);
 
   if (isLoading) return <div className="loading">Loading...</div>;
   if (error)
@@ -17,10 +19,11 @@ const ProjectDetails = () => {
   if (!project) return <div className="not-found">Project Not Found</div>;
 
   return (
-    <div className="project-container">
+  <div className={`main-projectDetails-container}`}>
+    <div className={`project-container ${isOpen ? "blur-background" : ""}`}>
       <div className="project-header">
         <h1 className="project-title">{project.name}</h1>
-        <Link to={`/${id}/new`}> <button className="Add-btn">+New Developer</button></Link>
+        <button className="Add-btn" onClick={()=>setisOpen(!isOpen)}>+New Developer</button>
       </div>
       <p className="project-desc">
         <strong>Description:</strong> {project.desc}
@@ -47,6 +50,10 @@ const ProjectDetails = () => {
           </Link>
         ))}
       </div>
+    </div>
+    {isOpen && <div className="addNew-developer-container">
+       <AddNewDeveloper setisOpen={setisOpen}/>
+      </div>}
     </div>
   );
 };

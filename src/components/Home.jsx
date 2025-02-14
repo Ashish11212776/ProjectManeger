@@ -14,7 +14,7 @@ const Home = () => {
 
   return (
    
-   <div className="project-container">
+   <div className="project-container-home">
   {data.listOfProjects.map((project) => (
     <Link to={`/${project.id}`} key={project.id}>
       <div className="project-card">

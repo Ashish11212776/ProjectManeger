@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import useMainData from "../hooks/useMainData";
-import { Link } from "react-router-dom";
 import "./css/developerDetails.css";
+import { useState } from "react";
+import AssignTask from "./AssignTask";
 const DeveloperDetails = () => {
   const columns = {
     pending: [],
@@ -11,6 +12,7 @@ const DeveloperDetails = () => {
   };
   const { id, devId } = useParams();
   const { isLoading, data, error } = useMainData();
+  const [isOpen, setisOpen] = useState(false);
 
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
@@ -28,10 +30,9 @@ const DeveloperDetails = () => {
   });
 
   return (
-    <div>
-       <Link to={`/${id}/dev/${devId}/newtask`}><button>+Add Task</button></Link>
-
-      <div className="main-container">
+    <div className="main-devdetails-container">
+      <button onClick={() => setisOpen(!isOpen)}>+Add Task</button>
+      <div className={`main-container ${isOpen ? "blur-background" : ""}`}>
         {Object.entries(columns).map(([status, tasks]) => (
           <div key={status} className="column">
             <h3>{status.charAt(0).toUpperCase() + status.slice(1)}</h3>
@@ -65,6 +66,11 @@ const DeveloperDetails = () => {
           </div>
         ))}
       </div>
+      {isOpen && (
+        <div className="assign-task-container">
+          <AssignTask setisOpen={setisOpen} />
+        </div>
+      )}
     </div>
   );
 };

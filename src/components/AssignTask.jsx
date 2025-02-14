@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { ADD_TASK } from "../feactures/mainSlice";
 import { useParams } from "react-router-dom";
-const AssignTask = () => {
+const AssignTask = ({setisOpen}) => {
   const dispatch = useDispatch();
   const proj_dev_id=useParams();
   const {id,devId}=proj_dev_id
@@ -33,6 +33,7 @@ const AssignTask = () => {
       assignDate: "",
       dateOfSubmission: "",
     });
+    setisOpen();
   };
 
   return (

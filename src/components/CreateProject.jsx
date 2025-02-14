@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./css/createProject.css";
 import { useDispatch } from "react-redux";
 import { ADD_DATA } from "../feactures/mainSlice";
-const CreateProject = () => {
+const CreateProject = ({setisOpen}) => {
   const [project, setProject] = useState({
     id: "",
     name: "",
@@ -36,7 +36,7 @@ const CreateProject = () => {
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Project Data:", project);
+    setisOpen();
     dispatch(ADD_DATA(project));
   };
 
