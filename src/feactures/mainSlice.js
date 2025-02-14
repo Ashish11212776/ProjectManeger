@@ -17,7 +17,6 @@ export const mainSlice = createSlice({
     },
     ADD_DEVELOPER: (state, action) => {
       const { proj_Id, developer } = action.payload;
-      console.log(proj_Id, developer);
       const project = state.data.listOfProjects.find(
         (p) => p.id === proj_Id.id
       );
@@ -28,7 +27,6 @@ export const mainSlice = createSlice({
     },
     ADD_TASK: (state, action) => {
       const { id, devId, task, status, changeTaskId } = action.payload;
-      console.log(id, devId, task, status);
       const project = state.data.listOfProjects.find((p) => p.id === id);
 
       if (project) {

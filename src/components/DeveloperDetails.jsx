@@ -16,7 +16,6 @@ const DeveloperDetails = () => {
   const { id, devId } = useParams();
   const { isLoading, data, error } = useMainData();
   const [isOpen, setisOpen] = useState(false);
-  const [status,setstatus]=useState("pending")
   const dispatch=useDispatch();
 
   if (isLoading) return <p>Loading...</p>;
@@ -33,9 +32,8 @@ const DeveloperDetails = () => {
       columns[task.status.toLowerCase()].push(task);
     }
   });
-
   const handleChange=(e,changeTaskId)=>{
-    setstatus(e.target.value);
+    const status=e.target.value;
     dispatch(ADD_TASK({id,devId,status,changeTaskId}))
   }
 
