@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./css/createProject.css";
 import { useDispatch } from "react-redux";
 import { ADD_DATA } from "../feactures/mainSlice";
+import CancelBtn from "./CancelBtn";
 const CreateProject = ({setisOpen}) => {
   const [project, setProject] = useState({
     id: "",
@@ -42,6 +43,7 @@ const CreateProject = ({setisOpen}) => {
 
   return (
     <div className="form-container">
+      <CancelBtn setisOpen={setisOpen}/>
       <h2>Create New Project</h2>
       <form onSubmit={handleSubmit}>
         <input required

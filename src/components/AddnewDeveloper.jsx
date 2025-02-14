@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { ADD_DEVELOPER } from "../feactures/mainSlice";
 import { useDispatch } from "react-redux";
+import CancelBtn from "./CancelBtn";
+
 const AddNewDeveloper = ({setisOpen}) => {
  const dispatch=useDispatch();
 
@@ -29,6 +31,7 @@ const AddNewDeveloper = ({setisOpen}) => {
 
   return (
     <div className="developer-form-container">
+      <CancelBtn setisOpen={setisOpen}/>
       <h2>Add New Developer</h2>
       <form onSubmit={handleSubmit}>
         <input required

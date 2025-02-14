@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { ADD_TASK } from "../feactures/mainSlice";
 import { useParams } from "react-router-dom";
+import CancelBtn from "./CancelBtn";
 const AssignTask = ({setisOpen}) => {
   const dispatch = useDispatch();
   const proj_dev_id=useParams();
@@ -37,6 +38,7 @@ const AssignTask = ({setisOpen}) => {
 
   return (
     <div className="form-container">
+     <CancelBtn setisOpen={setisOpen}/>
       <h2>Assign New Task</h2>
       <form onSubmit={handleSubmit}>
         <input 
