@@ -6,8 +6,7 @@ const AssignTask = ({setisOpen}) => {
   const dispatch = useDispatch();
   const proj_dev_id=useParams();
   const {id,devId}=proj_dev_id
-  console.log(id,devId)
-
+  
   const [task, setTask] = useState({
     taskId: "",
     taskName: "",
@@ -40,7 +39,7 @@ const AssignTask = ({setisOpen}) => {
     <div className="form-container">
       <h2>Assign New Task</h2>
       <form onSubmit={handleSubmit}>
-        <input
+        <input 
           type="text"
           name="taskId"
           placeholder="Task ID"

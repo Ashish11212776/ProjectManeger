@@ -4,7 +4,7 @@ import { fetchData } from "./mainThunks";
 const initialState = {
   isLoading: false,
   status: "pending",
-  data:[] , 
+  data: [],
   error: null,
 };
 
@@ -15,27 +15,35 @@ export const mainSlice = createSlice({
     ADD_DATA: (state, action) => {
       state.data.listOfProjects.push(action.payload);
     },
-     ADD_DEVELOPER: (state, action) => {
+    ADD_DEVELOPER: (state, action) => {
       const { proj_Id, developer } = action.payload;
-      console.log(proj_Id,developer)
-      const project = state.data.listOfProjects.find(p => p.id === proj_Id.id);
-       console.log("after project",project)
+      console.log(proj_Id, developer);
+      const project = state.data.listOfProjects.find(
+        (p) => p.id === proj_Id.id
+      );
+      console.log("after project", project);
       if (project) {
         project.listOfDevelopers.push(developer);
       }
-    }, ADD_TASK: (state, action) => {
-      const { id,devId,task } = action.payload;
-      console.log(id,devId)
-      const project = state.data.listOfProjects.find(p => p.id ===id);
-      
+    },
+    ADD_TASK: (state, action) => {
+      const { id, devId, task, status, changeTaskId } = action.payload;
+      console.log(id, devId, task, status);
+      const project = state.data.listOfProjects.find((p) => p.id === id);
+
       if (project) {
-        const developer = project.listOfDevelopers.find(d => d.devId === devId);
-        if (developer) {
+        const developer = project.listOfDevelopers.find(
+          (d) => d.devId === devId
+        );
+        if (developer && task) {
           developer.listOfTasks.push(task);
-         
+        } else if (developer && status && changeTaskId) {
+          developer.listOfTasks = developer.listOfTasks.map((task) =>
+            task.taskId === changeTaskId ? { ...task, status } : task
+          );
         }
       }
-    }
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -58,5 +66,5 @@ export const mainSlice = createSlice({
   },
 });
 
-export const { ADD_DATA,ADD_DEVELOPER,ADD_TASK } = mainSlice.actions;
+export const { ADD_DATA, ADD_DEVELOPER, ADD_TASK } = mainSlice.actions;
 export default mainSlice.reducer;

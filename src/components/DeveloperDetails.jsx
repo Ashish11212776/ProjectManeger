@@ -3,16 +3,21 @@ import useMainData from "../hooks/useMainData";
 import "./css/developerDetails.css";
 import { useState } from "react";
 import AssignTask from "./AssignTask";
+import { useDispatch } from "react-redux";
+import { ADD_TASK } from "../feactures/mainSlice";
 const DeveloperDetails = () => {
   const columns = {
     pending: [],
     "in-progress": [],
     review: [],
     qa: [],
+    done: [],
   };
   const { id, devId } = useParams();
   const { isLoading, data, error } = useMainData();
   const [isOpen, setisOpen] = useState(false);
+  const [status,setstatus]=useState("pending")
+  const dispatch=useDispatch();
 
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
@@ -29,6 +34,11 @@ const DeveloperDetails = () => {
     }
   });
 
+  const handleChange=(e,changeTaskId)=>{
+    setstatus(e.target.value);
+    dispatch(ADD_TASK({id,devId,status,changeTaskId}))
+  }
+
   return (
     <div className="main-devdetails-container">
       <button onClick={() => setisOpen(!isOpen)}>+Add Task</button>
@@ -43,8 +53,21 @@ const DeveloperDetails = () => {
                   <div className="task-header">
                     <h4>{task.taskName}</h4>
                     <span className={`priority ${task.priority.toLowerCase()}`}>
-                      {task.priority}
+                      Priority: {task.priority}
                     </span>
+
+                    <select
+                      name="status"
+                      value={task.status}
+                       onChange={(e)=>handleChange(e,task.taskId)}
+                    >
+                      <option value="pending">Pending</option>
+                      <option value="in-progress">In Progress</option>
+                      <option value="review">Review</option>
+                      <option value="QA">QA</option>
+                      <option value="done">Done</option>
+                    </select>
+
                   </div>
                   <p>
                     <strong>Assigned to:</strong> {task.devName}

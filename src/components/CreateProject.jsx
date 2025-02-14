@@ -44,14 +44,14 @@ const CreateProject = ({setisOpen}) => {
     <div className="form-container">
       <h2>Create New Project</h2>
       <form onSubmit={handleSubmit}>
-        <input
+        <input required
           type="text"
           name="id"
           placeholder="Project id"
           value={project.id}
           onChange={handleChange}
         />
-        <input
+        <input required
           type="text"
           name="name"
           placeholder="Project Name"
@@ -59,12 +59,14 @@ const CreateProject = ({setisOpen}) => {
           onChange={handleChange}
         />
         <textarea
+        required
           name="desc"
           placeholder="Project Description"
           value={project.desc}
           onChange={handleChange}
         ></textarea>
         <input
+          required
           type="date"
           name="projStartDate"
           value={project.date}

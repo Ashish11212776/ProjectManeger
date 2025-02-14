@@ -31,7 +31,7 @@ const AddNewDeveloper = ({setisOpen}) => {
     <div className="developer-form-container">
       <h2>Add New Developer</h2>
       <form onSubmit={handleSubmit}>
-        <input
+        <input required
           type="text"
           name="devId"
           placeholder="Developer ID"
@@ -39,14 +39,14 @@ const AddNewDeveloper = ({setisOpen}) => {
           onChange={handleChange}
         />
         
-        <input
+        <input required
           type="text"
           name="devName"
           placeholder="Developer Name"
           value={developer.devName}
           onChange={handleChange}
         />
-        <input
+        <input required
           type="date"
           name="dateOfJoin"
           value={developer.dateOfJoin}
