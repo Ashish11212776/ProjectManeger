@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./css/createProject.css";
 import { useDispatch } from "react-redux";
 import { ADD_DATA } from "../feactures/mainSlice";
 import CancelBtn from "./CancelBtn";

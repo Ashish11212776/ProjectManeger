@@ -2,8 +2,8 @@
   "listOfProjects": [
     {
       "id": "1",
-      "name": "project1",
-      "desc": "this is the 1st project",
+      "name": "E-Commerce Platform",
+      "desc": "Building a scalable e-commerce platform with modern technologies",
       "projStartDate": "2025-02-22",
       "status": "Active",
       "listOfDevelopers": [
@@ -14,19 +14,11 @@
           "listOfTasks": [
             {
               "taskId": "task1",
-              "taskName": "bug fix",
+              "taskName": "Shopping Cart Implementation",
               "status": "pending",
-              "priority": "low",
+              "priority": "high",
               "assignDate": "2025-02-22",
               "dateOfSubmission": "2025-02-28"
-            },
-            {
-              "taskId": "task2",
-              "taskName": "add loading feature",
-              "status": "QA",
-              "priority": "high",
-              "assignDate": "2025-02-23",
-              "dateOfSubmission": "2025-03-01"
             }
           ]
         }
@@ -34,10 +26,10 @@
     },
     {
       "id": "2",
-      "name": "project2",
-      "desc": "this is the 2nd project",
+      "name": "CRM System Upgrade",
+      "desc": "Modernizing the existing CRM system with new features and improved UI",
       "projStartDate": "2025-02-22",
-      "status": "Done",
+      "status": "In Progress",
       "listOfDevelopers": [
         {
           "devId": "dev2",
@@ -46,19 +38,11 @@
           "listOfTasks": [
             {
               "taskId": "task1",
-              "taskName": "login error handle",
-              "status": "pending",
-              "priority": "low",
+              "taskName": "Dashboard Redesign",
+              "status": "QA",
+              "priority": "medium",
               "assignDate": "2025-02-22",
               "dateOfSubmission": "2025-02-28"
-            },
-            {
-              "taskId": "task2",
-              "taskName": "status bar add",
-              "status": "QA",
-              "priority": "low",
-              "assignDate": "2025-02-23",
-              "dateOfSubmission": "2025-03-02"
             }
           ]
         }
@@ -66,10 +50,10 @@
     },
     {
       "id": "3",
-      "name": "project3",
-      "desc": "this is the 3rd project",
+      "name": "Mobile App Development",
+      "desc": "Creating a cross-platform mobile application for customer engagement",
       "projStartDate": "2025-03-01",
-      "status": "In Progress",
+      "status": "Done",
       "listOfDevelopers": [
         {
           "devId": "dev3",
@@ -78,83 +62,11 @@
           "listOfTasks": [
             {
               "taskId": "task1",
-              "taskName": "database optimization",
-              "status": "in-progress",
-              "priority": "medium",
+              "taskName": "User Authentication",
+              "status": "completed",
+              "priority": "high",
               "assignDate": "2025-03-01",
               "dateOfSubmission": "2025-03-07"
-            },
-            {
-              "taskId": "task2",
-              "taskName": "security patching",
-              "status": "pending",
-              "priority": "high",
-              "assignDate": "2025-03-02",
-              "dateOfSubmission": "2025-03-10"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "4",
-      "name": "project4",
-      "desc": "this is the 4th project",
-      "projStartDate": "2025-03-05",
-      "status": "On Hold",
-      "listOfDevelopers": [
-        {
-          "devId": "dev4",
-          "devName": "rohit",
-          "dataOfJoin": "2025-03-05",
-          "listOfTasks": [
-            {
-              "taskId": "task1",
-              "taskName": "UI redesign",
-              "status": "pending",
-              "priority": "medium",
-              "assignDate": "2025-03-05",
-              "dateOfSubmission": "2025-03-12"
-            },
-            {
-              "taskId": "task2",
-              "taskName": "performance improvements",
-              "status": "QA",
-              "priority": "high",
-              "assignDate": "2025-03-06",
-              "dateOfSubmission": "2025-03-14"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "5",
-      "name": "project5",
-      "desc": "this is the 5th project",
-      "projStartDate": "2025-03-10",
-      "status": "Completed",
-      "listOfDevelopers": [
-        {
-          "devId": "dev5",
-          "devName": "kiran",
-          "dataOfJoin": "2025-03-10",
-          "listOfTasks": [
-            {
-              "taskId": "task1",
-              "taskName": "API integration",
-              "status": "done",
-              "priority": "high",
-              "assignDate": "2025-03-10",
-              "dateOfSubmission": "2025-03-17"
-            },
-            {
-              "taskId": "task2",
-              "taskName": "unit testing",
-              "status": "done",
-              "priority": "medium",
-              "assignDate": "2025-03-11",
-              "dateOfSubmission": "2025-03-18"
             }
           ]
         }
