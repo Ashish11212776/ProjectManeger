@@ -1,7 +1,7 @@
 
 const CancelBtn = ({setisOpen}) => {
   return (
-    <p className="cancel-btn" onClick={()=>setisOpen()}>❌</p>
+    <p className="cancel-btn cursor-pointer" onClick={()=>setisOpen()}>❌</p>
   )
 }
 
