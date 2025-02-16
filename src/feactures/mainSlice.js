@@ -25,6 +25,19 @@ export const mainSlice = createSlice({
         project.listOfDevelopers.push(developer);
       }
     },
+    EDIT_PROJ: (state, action) => {
+     const index=state.data.listOfProjects.findIndex((item)=>item.id===action.payload.id);
+     index ? state.data.listOfProjects[index]=action.payload : window.alert("Data does't Exit");
+    },
+    DELETE_PROJ: (state, action) => {
+      const index = state.data.listOfProjects.findIndex((item) => item.id === action.payload);
+      if (index !== -1) {
+        state.data.listOfProjects.splice(index, 1); 
+      } else {
+        window.alert("Data doesn't exist");
+      }
+    },
+    
     ADD_TASK: (state, action) => {
       const { id, devId, task, status, changeTaskId } = action.payload;
       const project = state.data.listOfProjects.find((p) => p.id === id);
@@ -64,5 +77,5 @@ export const mainSlice = createSlice({
   },
 });
 
-export const { ADD_DATA, ADD_DEVELOPER, ADD_TASK } = mainSlice.actions;
+export const { ADD_DATA, ADD_DEVELOPER, ADD_TASK, EDIT_PROJ,DELETE_PROJ } = mainSlice.actions;
 export default mainSlice.reducer;
