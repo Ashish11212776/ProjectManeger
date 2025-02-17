@@ -4,7 +4,7 @@ import { ADD_DATA,EDIT_PROJ } from "../feactures/mainSlice";
 import CancelBtn from "./CancelBtn";
 
 const CreateProject = ({ setisOpen, setisEdit, project }) => {
-  const isEditing = Boolean(project); // Check if editing
+  const isEditing = Boolean(project); 
 
   const [projectData, setProjectData] = useState(
     project || {
@@ -46,8 +46,8 @@ const CreateProject = ({ setisOpen, setisEdit, project }) => {
       setisEdit(false); 
     } else {
       console.log("Creating Project:", projectData);
-      dispatch(ADD_DATA(projectData)); // Dispatch new project
-      setisOpen(false); // Close create modal
+      dispatch(ADD_DATA(projectData)); 
+      setisOpen(false); 
     }
   };
 

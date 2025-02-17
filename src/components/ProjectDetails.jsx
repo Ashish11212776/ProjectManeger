@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import useMainData from "../hooks/useMainData.js";
 import { useState } from "react";
-import { Calendar, Users, Clock, PlusCircle, Pencil, Trash } from "lucide-react";
+import { Calendar, Users, Clock, PlusCircle, Pencil } from "lucide-react";
 import AddNewDeveloper from "./AddnewDeveloper.jsx";
 import CreateProject from "./CreateProject.jsx";
 
@@ -35,10 +35,6 @@ const ProjectDetails = () => {
         </div>
       </div>
     );
-
-    const handleDelete=()=>{
-       
-    }
 
   const project = data.listOfProjects.find((item) => String(item.id) === id);
 

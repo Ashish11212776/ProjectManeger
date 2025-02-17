@@ -17,29 +17,43 @@ export const mainSlice = createSlice({
     },
     ADD_DEVELOPER: (state, action) => {
       const { proj_Id, developer } = action.payload;
+      if (!state.data.listOfProjects) {
+        console.error("No projects available in state");
+        return;
+      }
       const project = state.data.listOfProjects.find(
-        (p) => p.id === proj_Id.id
+        (p) => String(p.id) === String(proj_Id.id)
       );
-      console.log("after project", project);
       if (project) {
         project.listOfDevelopers.push(developer);
+        console.log("Developer added successfully:", developer);
+      } else {
+        console.error("Project not found for ID:", proj_Id.id);
       }
     },
+
     EDIT_PROJ: (state, action) => {
-     const index=state.data.listOfProjects.findIndex((item)=>item.id===action.payload.id);
-     index ? state.data.listOfProjects[index]=action.payload : window.alert("Data does't Exit");
+      const index = state.data.listOfProjects.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      index
+        ? (state.data.listOfProjects[index] = action.payload)
+        : window.alert("Data does't Exit");
     },
     DELETE_PROJ: (state, action) => {
-      const index = state.data.listOfProjects.findIndex((item) => item.id === action.payload);
+      const index = state.data.listOfProjects.findIndex(
+        (item) => item.id === action.payload
+      );
       if (index !== -1) {
-        state.data.listOfProjects.splice(index, 1); 
+        state.data.listOfProjects.splice(index, 1);
       } else {
         window.alert("Data doesn't exist");
       }
     },
-    
+
     ADD_TASK: (state, action) => {
       const { id, devId, task, status, changeTaskId } = action.payload;
+      console.log(action.payload)
       const project = state.data.listOfProjects.find((p) => p.id === id);
 
       if (project) {
@@ -77,5 +91,11 @@ export const mainSlice = createSlice({
   },
 });
 
-export const { ADD_DATA, ADD_DEVELOPER, ADD_TASK, EDIT_PROJ,DELETE_PROJ } = mainSlice.actions;
+export const {
+  ADD_DATA,
+  ADD_DEVELOPER,
+  ADD_TASK,
+  EDIT_PROJ,
+  DELETE_PROJ,
+} = mainSlice.actions;
 export default mainSlice.reducer;

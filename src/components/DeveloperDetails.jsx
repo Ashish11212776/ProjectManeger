@@ -23,9 +23,17 @@ const DeveloperDetails = () => {
   if (!data || !data.listOfProjects || data.listOfProjects.length === 0)
     return <p className="text-center text-gray-500">No data available</p>;
 
-  const developer = data.listOfProjects[id - 1].listOfDevelopers.find(
-    (dev) => dev.devId === devId
-  );
+  const project = data.listOfProjects.find((proj) => proj.id === id);
+
+  if (!project) {
+    return <p>Project not found</p>;
+  }
+
+  const developer = project.listOfDevelopers.find((dev) => dev.devId === devId);
+
+  if (!developer) {
+    return <p>Developer not found</p>;
+  }
 
   developer.listOfTasks.forEach((task) => {
     if (columns[task.status.toLowerCase()]) {
@@ -52,7 +60,7 @@ const DeveloperDetails = () => {
             <h3 className="text-xl font-semibold capitalize text-gray-800 mb-4">{status}</h3>
             {tasks.length > 0 ? (
               tasks.map((task) => (
-                <div key={task.taskId} className="bg-white p-4 rounded-lg shadow space-y-2">
+                <div key={task.taskId} className="bg-white p-4 rounded-lg shadow space-y-2 mt-5">
                   <div className="flex justify-between items-center">
                     <h4 className="font-semibold text-lg text-gray-900">{task.taskName}</h4>
                     <span

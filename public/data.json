@@ -71,6 +71,126 @@
           ]
         }
       ]
+    },
+    {
+      "id": "4",
+      "name": "AI Chatbot Integration",
+      "desc": "Integrating AI-driven chatbot for customer support",
+      "projStartDate": "2025-03-05",
+      "status": "Planning",
+      "listOfDevelopers": [
+        {
+          "devId": "dev4",
+          "devName": "priya",
+          "dataOfJoin": "2025-03-05",
+          "listOfTasks": [
+            {
+              "taskId": "task1",
+              "taskName": "NLP Model Training",
+              "status": "pending",
+              "priority": "high",
+              "assignDate": "2025-03-05",
+              "dateOfSubmission": "2025-03-15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Blockchain Wallet Development",
+      "desc": "Developing a secure cryptocurrency wallet",
+      "projStartDate": "2025-03-10",
+      "status": "Active",
+      "listOfDevelopers": [
+        {
+          "devId": "dev5",
+          "devName": "vijay",
+          "dataOfJoin": "2025-03-10",
+          "listOfTasks": [
+            {
+              "taskId": "task1",
+              "taskName": "Smart Contract Integration",
+              "status": "pending",
+              "priority": "high",
+              "assignDate": "2025-03-10",
+              "dateOfSubmission": "2025-03-20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Cloud Data Migration",
+      "desc": "Migrating enterprise data to the cloud",
+      "projStartDate": "2025-03-15",
+      "status": "In Progress",
+      "listOfDevelopers": [
+        {
+          "devId": "dev6",
+          "devName": "karthik",
+          "dataOfJoin": "2025-03-15",
+          "listOfTasks": [
+            {
+              "taskId": "task1",
+              "taskName": "Database Optimization",
+              "status": "QA",
+              "priority": "medium",
+              "assignDate": "2025-03-15",
+              "dateOfSubmission": "2025-03-25"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "IoT Home Automation",
+      "desc": "Building an IoT-based smart home automation system",
+      "projStartDate": "2025-03-20",
+      "status": "Planning",
+      "listOfDevelopers": [
+        {
+          "devId": "dev7",
+          "devName": "ananya",
+          "dataOfJoin": "2025-03-20",
+          "listOfTasks": [
+            {
+              "taskId": "task1",
+              "taskName": "Device Integration",
+              "status": "pending",
+              "priority": "high",
+              "assignDate": "2025-03-20",
+              "dateOfSubmission": "2025-03-30"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Social Media Analytics Tool",
+      "desc": "Developing an analytics platform for social media insights",
+      "projStartDate": "2025-03-25",
+      "status": "Active",
+      "listOfDevelopers": [
+        {
+          "devId": "dev8",
+          "devName": "deepak",
+          "dataOfJoin": "2025-03-25",
+          "listOfTasks": [
+            {
+              "taskId": "task1",
+              "taskName": "Data Visualization Module",
+              "status": "pending",
+              "priority": "high",
+              "assignDate": "2025-03-25",
+              "dateOfSubmission": "2025-04-05"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
