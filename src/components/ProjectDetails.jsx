@@ -145,9 +145,12 @@ const ProjectDetails = () => {
                       <p className="text-lg font-medium text-gray-900 mb-2">
                         {dev.devName}
                       </p>
-                      <div className="flex items-center text-sm text-gray-500">
+                      <div className="flex items-center justify-between text-sm text-gray-500">
+                        <div>
                         <Calendar className="w-4 h-4 mr-1" />
                         <span>Joined: {dev.dataOfJoin}</span>
+                        </div>
+                       <p className="">Click to more...</p>
                       </div>
                     </div>
                   </Link>
